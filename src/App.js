@@ -1,5 +1,6 @@
-import './assets/css/App.css';
-import NavBar from '../components/NavBar';
+import React from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
 import WeatherPanel from './components/WeatherPanel';
 
 
@@ -7,9 +8,8 @@ function App() {
   return (
     <div className="App">
 
-      <NavBar />
+      <Navbar />
       <WeatherPanel />
-      <Footer />
 
     </div>
   );
