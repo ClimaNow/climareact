@@ -21,7 +21,7 @@ const Form = ({newLocation}) => {
                 </div>
             </form>
         </div>
-
+        
     );
 }
 

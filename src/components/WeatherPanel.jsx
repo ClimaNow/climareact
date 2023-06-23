@@ -1,84 +1,45 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Form from './Form';
 import Card from './Card';
 
 const WeatherPanel = () => {
+  const apiKey = 'Y726c54b184c24333b91182410231406'; 
 
-    let urlWeather = "https://api.openweathermap.org/data/2.5/weather?appid=&lang=es";
-    let cityUrl = "&q=";
+  const [weather, setWeather] = useState(null);
+  const [forecast, setForecast] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(false);
 
-    let urlForecast = "https://api.openweathermap.org/data/2.5/forecast?appid=&lang=es"
+  const getLocation = async (loc) => {
+    setLoading(true);
 
-    const [weather, setWeather] = useState([]);
-    const [forecast, setForecast] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [show, setShow] = useState(false);
-    const [location, setLocation] = useState("");
+    const weatherUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${loc}&lang=es`;
+    const forecastUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${loc}&days=3&lang=es`;
 
-    const getLocation = async(loc) => {
-        setLoading(true);
-        setLocation(loc);
+    try {
+      const weatherResponse = await fetch(weatherUrl);
+      const weatherData = await weatherResponse.json();
 
-        //weather
+      const forecastResponse = await fetch(forecastUrl);
+      const forecastData = await forecastResponse.json();
 
-        urlWeather = urlWeather + cityUrl + loc;
-
-        await fetch(urlWeather).then((response) =>{
-            if(!response.ok) throw {response}
-            return response.json();
-        }).then((weatherData) =>{
-            console.log(weatherData);
-            setWeather(weatherData);
-        }).catch(error =>{
-            console.log(error);
-            setLoading(false);
-            setShow(false);
-        });
-
-        //Forecast
-
-        urlForecast = urlForecast + cityUrl + loc;
-
-        await fetch(urlForecast).then((response) =>{
-            if(!response.ok) throw {response}
-            return response.json();
-        }).then((forecastData) =>{
-            console.log(forecastData);
-            setForecast(forecastData);
-
-            setLoading(false);
-            setShow(true);
-
-        }).catch(error =>{
-            console.log(error);
-            setLoading(false);
-            setShow(false);
-        });
-
-        
+      setWeather(weatherData);
+      setForecast(forecastData);
+      setLoading(false);
+      setShow(true);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+      setShow(false);
     }
+  };
 
-
-    return(
-
-        <>
-    
-            <Form
-                newLocation = {getLocation}
-            />
-
-            <Card
-                showData = {show}
-                loadingData = {loading}
-                weather = {weather}
-                forecast = {forecast}
-            />
-
-
-        </>
-
-    );
-
-}
+  return (
+    <div>
+      <Form newLocation={getLocation} />
+      <Card showData={show} loadingData={loading} weather={weather} forecast={forecast} />
+    </div>
+  );
+};
 
 export default WeatherPanel;
