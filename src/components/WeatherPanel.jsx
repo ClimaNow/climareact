@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Form from './Form';
 import Card from './Card';
 
+
 const WeatherPanel = () => {
   const apiKey = 'Y726c54b184c24333b91182410231406'; 
 
@@ -37,7 +38,7 @@ const WeatherPanel = () => {
   return (
     <div>
       <Form newLocation={getLocation} />
-      <Card showData={show} loadingData={loading} weather={weather} forecast={forecast} />
+      <Card loadingData={loading} showData={show} weather={weather} forecast={forecast} />
     </div>
   );
 };

@@ -7,8 +7,8 @@ const Card = ({ loadingData, showData, weather, forecast }) => {
     return <Spinner />;
   }
 
-  if (!showData) {
-    return <h2 className="text-light">ciudad</h2>;
+  if (!showData || !weather || !weather.location) {
+    return <h2 className="text-light">Buscador</h2>;
   }
 
   const today = new Date().toLocaleDateString('es-AR');
@@ -28,13 +28,15 @@ const Card = ({ loadingData, showData, weather, forecast }) => {
     );
   };
 
+  const locationName = weather.location ? weather.location.name : '';
+
   return (
     <div className="mt-5 d-flex justify-content-center align-items-center">
       <div className="container">
         <div className="card mb-3 mx-auto bg-dark text-light custom-card" style={{ height: '500px', width: '300px' }}>
           <div className="row g-0">
             <div className="col-md-4">
-              <h3 className="card-title">{weather.location.name}</h3>
+              <h3 className="card-title">{locationName}</h3>
               <p className="card-date">{today}</p>
               <h1 className="card-temp">{weather.current.temp_c.toFixed(1)}ºC</h1>
               <p className="card-desc">
