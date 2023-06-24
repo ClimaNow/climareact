@@ -17,7 +17,7 @@ const NavBar = () => {
             <a className="nav-link" href="/formulario">Formulario</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="about">Sobre Nosotros</a>
+            <a className="nav-link" href="/about">Sobre Nosotros</a>
           </li>
         </ul>
       </div>
