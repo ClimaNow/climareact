@@ -5,6 +5,9 @@ import Home from './components/Home';
 import LandingPage from './components/LandingPage';
 import WeatherPanel from './components/WeatherPanel';
 import Footer from './components/Footer';
+import Formulario from './components/Formulario';
+import About from './components/About';
+
 
 function App() {
   return (
@@ -13,9 +16,9 @@ function App() {
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/Home" element={<Home />} />
-          <Route exact path="/about" element={<h2>Sobre Nosotros</h2>} /> {/* Agrega la ruta para "About Us" */}
-          <Route exact path="/formulario" element={<h2>Formulario de Contacto</h2>} /> {/* Agrega la ruta para "Contact Form" */}
-          <Route exact path="/weather" element={<WeatherPanel />} />
+          <Route exact path="/About" element={<About/>} /> 
+          <Route exact path="/Formulario" element={<Formulario />} /> 
+          <Route exact path="/Weather" element={<WeatherPanel />} />
           <Route exact path='/Footer' element= {<Footer /> } />
         </Routes>
       </div>

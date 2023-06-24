@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const Formulario = () => {
+  
   const [nombre, setNombre] = useState("un nombre");
   const [correo, setCorreo] = useState("");
   const [isActive, setIsActive] = useState(true);
@@ -45,7 +46,7 @@ const Formulario = () => {
   }
 
   return (
-    <>
+    
       <div className="container">
         <h1>Formulario</h1>
         <form>
@@ -102,7 +103,7 @@ const Formulario = () => {
             onClick={gestionEnvio}>Enviar</button>
         </form >
       </div >
-    </>
+    
   );
 }
 
