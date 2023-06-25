@@ -47,73 +47,6 @@ const Formulario = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="container">
-      <h1>Formulario</h1>
-      <form>
-        <div className="form-group">
-          <label htmlFor="nombre">Ingresa tu Nombre</label>
-          <input
-            className="form-control"
-            type="text"
-            id="nombre"
-            name="nombre"
-            placeholder="Ingresa tu nombre"
-            value={nombre}
-            onChange={gestionInputCambia}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="correo">Email</label>
-          <input
-            className="form-control"
-            type="email"
-            id="correo"
-            name="correo"
-            placeholder="Ingresa tu Email"
-            value={correo}
-            onChange={gestionInputCambia}
-          />
-        </div>
-        <div className="form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="isActive"
-            value={isActive}
-            onChange={gestionInputCambia}
-          />
-          <label className="form-check-label" htmlFor="isActive">
-            Activado
-          </label>
-        </div>
-        <div className="form-group">
-          <label htmlFor="clima">Clima que te gusta?</label>
-          <select
-            className="form-control"
-            id="clima"
-            value={clima}
-            onChange={gestionInputCambia}
-          >
-            <option>Seleccionar</option>
-            <option value="soleado">Soleado</option>
-            <option value="lluvioso">Lluvioso</option>
-            <option value="nevado">Nevado</option>
-            <option value="nublado">Nublado</option>
-            <option value="templado">Templado</option>
-          </select>
-        </div>
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={gestionEnvio}
-        >
-          Enviar
-        </button>
-      </form>
-    </div>
-    
-=======
 
     <div
       className= "Formulario">
@@ -175,7 +108,6 @@ const Formulario = () => {
             onClick={gestionEnvio}>Enviar</button>
         </form >
       </div >
->>>>>>> 703d4888d79120ef7fba88cc8f3a8b8f335aa3f6
   );
 };
 
