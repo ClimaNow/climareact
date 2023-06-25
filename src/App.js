@@ -7,6 +7,8 @@ import WeatherPanel from './components/WeatherPanel';
 import Footer from './components/Footer';
 import Formulario from './components/Formulario';
 import About from './components/About';
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 
 function App() {
