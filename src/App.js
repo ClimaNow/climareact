@@ -4,12 +4,9 @@ import './App.css';
 import Home from './components/Home';
 import LandingPage from './components/LandingPage';
 import About from './components/About';
-<<<<<<< HEAD
 import 'bootstrap/dist/css/bootstrap.css';
-=======
 import Formulario from './components/Formulario';
 import WeatherPanel from './components/WeatherPanel';
->>>>>>> 703d4888d79120ef7fba88cc8f3a8b8f335aa3f6
 
 
 
