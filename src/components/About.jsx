@@ -16,7 +16,12 @@ const About = () => {
     {
       nombre: 'Yuliana Camacho',
       imagen: 'profile3.jpg',
-      descripcion: 'Breve descripción de la persona 3.',
+      descripcion: '',
+    },
+    {
+      nombre: 'Maygle',
+      imagen: 'profile4.jpg',
+      descripcion: 'Breve descripción de la persona 4.',
     },
   ];
 
