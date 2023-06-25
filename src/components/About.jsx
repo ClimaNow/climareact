@@ -18,11 +18,7 @@ const About = () => {
       imagen: 'profile3.jpg',
       descripcion: '',
     },
-    {
-      nombre: 'Maygle',
-      imagen: 'profile4.jpg',
-      descripcion: 'Breve descripción de la persona 4.',
-    },
+    
   ];
 
    return (
