@@ -8,10 +8,6 @@ import Footer from './components/Footer';
 import Formulario from './components/Formulario';
 import About from './components/About';
 import 'bootstrap/dist/css/bootstrap.css';
-import About from './components/About';
-import 'bootstrap/dist/css/bootstrap.css';
-import Formulario from './components/Formulario';
-import WeatherPanel from './components/WeatherPanel';
 
 function App() {
   return (
