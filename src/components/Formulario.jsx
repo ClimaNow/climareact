@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import Navbar from './Navbar';
 import './Formulario.css';
-import './Footer'
-
+import './Footer';
 
 const Formulario = () => {
   const [nombre, setNombre] = useState('');
@@ -48,14 +48,11 @@ const Formulario = () => {
   };
 
   return (
-
-    <div
-      className= "Formulario">
+    <div>
+      <Navbar />
+      <div className="Formulario">
         <label hatmlfor="name">Formulario</label>
-       
-    <form>
-      
-        
+        <form>
           <div className="form-group">
             <label htmlFor="nombre">Nombre</label>
             <input
@@ -81,12 +78,16 @@ const Formulario = () => {
             />
           </div>
           <div className="form-check">
-            <input type="checkbox"
+            <input
+              type="checkbox"
               className="form-check-input"
               id="isActive"
               value={isActive}
-              onChange={gestionInputCambia} />
-            <label className="form-check-label" htmlFor="isActive">Activado</label>
+              onChange={gestionInputCambia}
+            />
+            <label className="form-check-label" htmlFor="isActive">
+              Activado
+            </label>
           </div>
           <div className="form-group">
             <label htmlFor="clima">¿Cuál clima te gusta?</label>
@@ -94,7 +95,8 @@ const Formulario = () => {
               className="form-control"
               id="clima"
               value={clima}
-              onChange={gestionInputCambia}>
+              onChange={gestionInputCambia}
+            >
               <option>Seleccionar</option>
               <option value="soleado">Soleado</option>
               <option value="lluvioso">Lluvioso</option>
@@ -106,9 +108,13 @@ const Formulario = () => {
           <button
             type="button"
             className="btn btn-primary"
-            onClick={gestionEnvio}>Enviar</button>
-        </form >
-      </div >
+            onClick={gestionEnvio}
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 
