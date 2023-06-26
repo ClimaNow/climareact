@@ -58,7 +58,7 @@ label {
 @media (max-width: 768px) {
   body,
   html {
-    background-size: contain; /* Ajustar la imagen de nubes al tamaño del contenido */
-    background-position: center; /* Centrar la imagen de nubes */
+    background-size: contain; 
+    background-position: center; 
   }
 }

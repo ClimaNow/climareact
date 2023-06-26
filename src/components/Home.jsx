@@ -14,7 +14,7 @@ const Home = () => {
       <div className="container d-flex flex-column align-items-center justify-content-center">
         <div className="row">
           <div className="col-1">
-            <Link to="/" className="arrow-back">
+            <Link to="/landingPage" className="arrow-back">
               <FontAwesomeIcon icon={faArrowLeft} className="arrow-icon" />
             </Link>
           </div>
