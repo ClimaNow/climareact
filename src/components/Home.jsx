@@ -8,11 +8,10 @@ import WeatherPanel from './WeatherPanel';
 
 const Home = () => {
   return (
-    <div className="home_main" style={{ background: 'linear-gradient(to bottom right, #888888, #3399ff)', minHeight: '100vh' }}>
-
+    <div className="home_main" style={{ background: 'linear-gradient(to bottom right, #888888, #3399ff)' }}>
       <Navbar />
 
-      <div className="container">
+      <div className="container d-flex flex-column align-items-center justify-content-center">
         <div className="row">
           <div className="col-1">
             <Link to="/" className="arrow-back">
@@ -23,9 +22,7 @@ const Home = () => {
             <h1 className="text-center mt-3">Clima-Now</h1>
           </div>
         </div>
-      </div>
 
-      <div className="container d-flex justify-content-center align-items-center">
         <div className="row">
           <div className="col">
             <div className="card custom-card">

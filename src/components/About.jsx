@@ -10,23 +10,19 @@ const About = () => {
     },
     {
       nombre: 'Scarlet Lugo',
-      imagen: 'profile2.jpg',
+      imagen: './Assets/scarlet.jpg',
       descripcion: 'Venezolana, Casada en esta hermosa tierra que nos acobija cada día. Tengo 2 hijos hermosos y una mujer echada hacia delante.Me gusta llenarme de conocimiento y por eso estoy aquí.',
     },
     {
       nombre: 'Yuliana Camacho',
-      imagen: 'profile3.jpg',
+      imagen: './Assets/yuliana.jpg',
       descripcion: '',
     },
-    {
-      nombre: 'Maygle',
-      imagen: 'profile4.jpg',
-      descripcion: 'Breve descripción de la persona 4.',
-    },
+    
   ];
 
    return (
-    <div className="container justify-content-center">
+    <div className="container">
       <h1 className="text-primary">Acerca de Nosotros</h1>
 
       <div className="row">

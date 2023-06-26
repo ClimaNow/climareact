@@ -1,0 +1,14 @@
+#container2 img {
+    width: 40px;
+    height: 40px;
+  }
+
+  #container3{
+    background-color: #000;
+  }
+
+#titulo-footer, #derechos{
+    font-size:14px;
+}
+               
+
