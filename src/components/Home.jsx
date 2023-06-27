@@ -27,6 +27,7 @@ const Home = () => {
           <div className="col">
             <div className="card custom-card">
               <div className="card-body">
+                <h1>Clima-Now</h1>
                 <WeatherPanel />
               </div>
             </div>
