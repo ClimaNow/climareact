@@ -32,7 +32,8 @@ const About = () => {
               <img src={persona.imagen} className="card-img-top" alt={persona.nombre} />
               <div className="card-body">
                 <h5 className="card-title">{persona.nombre}</h5>
-                <p className="card-text" style={{ marginTop: '4rem' }}>{persona.descripcion}</p>
+                
+                <p className="card-text" style={{ marginTop: '2rem' }}>{persona.descripcion}</p>
               </div>
             </div>
           ))}

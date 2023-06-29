@@ -7,7 +7,7 @@ function LandingPage() {
       <div className="text-center">
         <h1 className="display-4 mb-4">¡Bienvenido!</h1>
         <p className="lead">Explora el pronóstico climático ahora mismo.</p>
-        <Link to="/home">
+        <Link to="/Home">
           <button className="btn btn-primary btn-lg">Inicio</button>
         </Link>
       </div>

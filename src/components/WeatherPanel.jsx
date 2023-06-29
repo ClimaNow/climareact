@@ -1,44 +1,43 @@
-import React, { useState } from 'react';
-import Form from './Form';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
-
+import Form from './Form';
+import axios from 'axios';
 
 const WeatherPanel = () => {
-  const apiKey = 'Y726c54b184c24333b91182410231406'; 
+  const apiKey = '726c54b184c24333b91182410231406'; //Esta es la ApiKey
 
-  const [weather, setWeather] = useState(null);
-  const [forecast, setForecast] = useState(null);
+  const [province, setProvince] = useState('');
+  const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
 
-  const getLocation = async (loc) => {
+  const searchWeather = async (loc) => {
     setLoading(true);
 
-    const weatherUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${loc}&lang=es`;
-    const forecastUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${loc}&days=3&lang=es`;
-
     try {
-      const weatherResponse = await fetch(weatherUrl);
-      const weatherData = await weatherResponse.json();
+      const response = await axios.get(
+        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${province}&aqi=no`
+      );//Aqu´realizamos la petición
 
-      const forecastResponse = await fetch(forecastUrl);
-      const forecastData = await forecastResponse.json();
-
-      setWeather(weatherData);
-      setForecast(forecastData);
+      setWeatherData(response.data);
       setLoading(false);
       setShow(true);
     } catch (error) {
-      console.log(error);
+      console.error(error);
+      setWeatherData(null);
       setLoading(false);
       setShow(false);
     }
   };
 
+  useEffect(() => {
+
+  }, []);
+
   return (
     <div>
-      <Form newLocation={getLocation} />
-      <Card loadingData={loading} showData={show} weather={weather} forecast={forecast} />
+      <Form newLocation={setProvince} searchWeather={searchWeather} />
+      {show && <Card loadingData={loading} weatherData={weatherData} />}
     </div>
   );
 };
