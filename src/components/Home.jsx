@@ -14,7 +14,7 @@ const Home = () => {
       <div className="container d-flex flex-column align-items-center justify-content-center">
         <div className="row">
           <div className="col-1">
-            <Link to="/landingPage" className="arrow-back">
+            <Link to="/" className="arrow-back">
               <FontAwesomeIcon icon={faArrowLeft} className="arrow-icon" />
             </Link>
           </div>
@@ -27,7 +27,6 @@ const Home = () => {
           <div className="col">
             <div className="card custom-card">
               <div className="card-body">
-                <h1>Clima-Now</h1>
                 <WeatherPanel />
               </div>
             </div>
